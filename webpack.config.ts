@@ -1,10 +1,10 @@
 import path from 'path';
 import webpack from 'webpack';
-// import { buildLoaders } from './confg/build/buildLoaders';
-// import { buildPlugins } from './confg/build/buildPlugins';
-// import { buildResolvers } from './confg/build/buildResolvers';
-import { buildWebpackConfig } from './confg/build/buildWebpackConfig';
-import { BuildPaths, BuildEnv } from './confg/build/types/config';
+// import { buildLoaders } from './config/build/buildLoaders';
+// import { buildPlugins } from './config/build/buildPlugins';
+// import { buildResolvers } from './config/build/buildResolvers';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { BuildPaths, BuildEnv } from './config/build/types/config';
 
 
 
