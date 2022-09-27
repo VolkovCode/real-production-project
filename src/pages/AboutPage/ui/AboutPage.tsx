@@ -5,6 +5,7 @@ function AboutPage() {
 
   return (
     <div>
+      ывфавыаыв
       {t('О сайте')}
     </div>
   );
