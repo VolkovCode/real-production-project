@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -41,6 +42,14 @@ module.exports = {
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'import/extensions': ['warn', 'ignorePackages', {
+      ts: 'never',
+      tsx: 'never',
+    }],
+    '@typescript-eslint/ban-ts-comment': 'off',
+  },
+  globals: {
+    __IS_DEV__: true,
   },
 };
