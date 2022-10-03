@@ -1,6 +1,7 @@
 /build
 .idea
 .vscode
+/storybook-static
 
 # Logs
 logs
