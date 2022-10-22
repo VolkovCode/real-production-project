@@ -6,15 +6,21 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Modal } from 'shared/ui/Modal/Modal';
+import { userActions } from 'entities/User';
+import { useDispatch } from 'react-redux';
 
 function App() {
   const { theme } = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <button onClick={() => setIsOpen(true)}>toggle</button>
         <div className="content-page">
           <Sidebar />
           <AppRouter />

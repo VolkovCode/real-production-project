@@ -5752,7 +5752,7 @@ function accumulateOrCreateContinuousQueuedReplayableEvent(existingQueuedEvent, 
   } // If we have already queued this exact event, then it's because
   // the different event systems have different DOM event listeners.
   // We can accumulate the flags, and the targetContainers, and
-  // store a single event to be replayed.
+  // slice a single event to be replayed.
 
 
   existingQueuedEvent.eventSystemFlags |= eventSystemFlags;
@@ -6115,7 +6115,7 @@ var ANIMATION_START = getVendorPrefixedEventName('animationstart');
 var TRANSITION_END = getVendorPrefixedEventName('transitionend');
 
 var topLevelEventsToReactNames = new Map();
-var eventPriorities = new Map(); // We store most of the events in this module in pairs of two strings so we can re-use
+var eventPriorities = new Map(); // We slice most of the events in this module in pairs of two strings so we can re-use
 // the code required to apply the same logic for event prioritization and that of the
 // SimpleEventPlugin. This complicates things slightly, but the aim is to reduce code
 // duplication (for which there would be quite a bit). For the events that are not needed
@@ -7123,7 +7123,7 @@ function addEventBubbleListenerWithPassiveFlag(target, eventType, listener, pass
 }
 
 /**
- * These variables store information about text content of a target node,
+ * These variables slice information about text content of a target node,
  * allowing comparison of content before and after a given event.
  *
  * Identify the node where selection currently begins, then observe
@@ -16505,7 +16505,7 @@ function readFromUnsubcribedMutableSource(root, source, getSnapshot) {
   var currentRenderVersion = getWorkInProgressVersion(source);
 
   if (currentRenderVersion !== null) {
-    // It's safe to read if the store hasn't been mutated since the last time
+    // It's safe to read if the slice hasn't been mutated since the last time
     // we read something.
     isSafeToReadFromSource = currentRenderVersion === version;
   } else {
@@ -16527,7 +16527,7 @@ function readFromUnsubcribedMutableSource(root, source, getSnapshot) {
 
     if (isSafeToReadFromSource) {
       // If it's safe to read from this source during the current render,
-      // store the version in case other components read from it.
+      // slice the version in case other components read from it.
       // A changed version number will let those components know to throw and restart the render.
       setWorkInProgressVersion(source, version);
     }
@@ -16642,7 +16642,7 @@ function useMutableSource(hook, source, getSnapshot, subscribe) {
         markRootMutableRead(root, lane);
       } catch (error) {
         // A selector might throw after a source mutation.
-        // e.g. it might try to read from a part of the store that no longer exists.
+        // e.g. it might try to read from a part of the slice that no longer exists.
         // In this case we should still schedule an update with React.
         // Worst case the selector will throw again and then an error boundary will handle it.
         latestSetSnapshot(function () {
@@ -25888,7 +25888,7 @@ function createWorkInProgress(current, pendingProps) {
     workInProgress.alternate = current;
     current.alternate = workInProgress;
   } else {
-    workInProgress.pendingProps = pendingProps; // Needed because Blocks store data on type.
+    workInProgress.pendingProps = pendingProps; // Needed because Blocks slice data on type.
 
     workInProgress.type = current.type; // We already have an alternate.
     // Reset the effect tag.
@@ -25995,7 +25995,7 @@ function resetWorkInProgress(workInProgress, renderLanes) {
     workInProgress.child = current.child;
     workInProgress.memoizedProps = current.memoizedProps;
     workInProgress.memoizedState = current.memoizedState;
-    workInProgress.updateQueue = current.updateQueue; // Needed because Blocks store data on type.
+    workInProgress.updateQueue = current.updateQueue; // Needed because Blocks slice data on type.
 
     workInProgress.type = current.type; // Clone the dependencies object. This is mutated during the render phase, so
     // it cannot be shared with the current fiber.
@@ -29587,7 +29587,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
 
   {
     // The validation flag is currently mutative. We put it on
-    // an external backing store so that we can freeze the whole object.
+    // an external backing slice so that we can freeze the whole object.
     // This can be replaced with a WeakMap once they are implemented in
     // commonly used development environments.
     element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
@@ -30723,7 +30723,7 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
 
   {
     // The validation flag is currently mutative. We put it on
-    // an external backing store so that we can freeze the whole object.
+    // an external backing slice so that we can freeze the whole object.
     // This can be replaced with a WeakMap once they are implemented in
     // commonly used development environments.
     element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
@@ -31223,7 +31223,7 @@ function createContext(defaultValue, calculateChangedBits) {
     // some renderers as primary and others as secondary. We only expect
     // there to be two concurrent renderers at most: React Native (primary) and
     // Fabric (secondary); React DOM (primary) and React ART (secondary).
-    // Secondary renderers store their context values on separate fields.
+    // Secondary renderers slice their context values on separate fields.
     _currentValue: defaultValue,
     _currentValue2: defaultValue,
     // Used to track how many concurrent renderers this context currently
@@ -31374,7 +31374,7 @@ function lazyInitializer(payload) {
 
 function lazy(ctor) {
   var payload = {
-    // We use these fields to store the result.
+    // We use these fields to slice the result.
     _status: -1,
     _result: ctor
   };
@@ -34119,7 +34119,7 @@ function _extends() {
 /******/ 	(() => {
 /******/ 		// no baseURI
 /******/ 		
-/******/ 		// object to store loaded and loading chunks
+/******/ 		// object to slice loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
