@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
 import { Input } from 'shared/ui/Input/Input';
 
-function MainPage() {
-  const { t } = useTranslation();
-  const [value, setValue] = useState('');
-  const onChange = (val: string) => {
-    setValue(val);
-  };
+const MainPage = () => {
+    const { t } = useTranslation();
+    const [value, setValue] = useState('');
 
-  return (
-    <div>
-      <BugButton />
-      {t('Главная страница')}
-      <Input
-        placeholder="Привет"
-        value={value}
-        onChange={onChange}
-      />
-    </div>
-  );
-}
+    const onChange = (val: string) => {
+        setValue(val);
+    };
+
+    return (
+        <div>
+            {t('Главная страница')}
+        </div>
+    );
+};
 
 export default MainPage;
