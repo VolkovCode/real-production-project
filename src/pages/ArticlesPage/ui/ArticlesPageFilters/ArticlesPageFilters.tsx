@@ -69,8 +69,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlePageActions.setType(value));
         dispatch(articlePageActions.setPage(1));
-        debounceFetchData();
-    }, [dispatch, debounceFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
