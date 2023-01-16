@@ -33,19 +33,8 @@ export const CurrencySelect = memo(({
             onChange={onChangeHandler}
             items={options}
             readonly={readonly}
-            direction="top"
+            direction="top right"
         />
 
     );
-
-    // return (
-    //     <Select
-    //         className={classNames('', {}, [className])}
-    //         label={t('Укажите валюту')}
-    //         options={options}
-    //         value={value}
-    //         onChange={onChangeHandler}
-    //         readonly={readonly}
-    //     />
-    // );
 });
