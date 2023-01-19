@@ -1,9 +1,9 @@
 import { Fragment, ReactNode } from 'react';
-import { Listbox as HListbox } from '@headlessui/react';
+import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
-import { HStack } from 'shared/ui/Stack';
 import { DropdownDirection } from 'shared/types/ui';
+import { HStack } from '../Stack';
+import { Button } from '../Button/Button';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -17,7 +17,7 @@ interface ListBoxProps {
     className?: string;
     value?: string;
     defaultValue?: string;
-    onChange: <T extends string>(value: T) => void;
+    onChange: (value: string) => void;
     readonly?: boolean;
     direction?: DropdownDirection;
     label?: string;
@@ -26,8 +26,8 @@ interface ListBoxProps {
 const mapDirectionClass: Record<DropdownDirection, string> = {
     'bottom left': cls.optionsBottomLeft,
     'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
     'top right': cls.optionsTopRight,
+    'top left': cls.optionsTopLeft,
 };
 
 export function ListBox(props: ListBoxProps) {
@@ -36,8 +36,8 @@ export function ListBox(props: ListBoxProps) {
         items,
         value,
         defaultValue,
-        readonly,
         onChange,
+        readonly,
         direction = 'bottom right',
         label,
     } = props;
@@ -47,41 +47,44 @@ export function ListBox(props: ListBoxProps) {
     return (
         <HStack gap="4">
             {label && <span>{`${label}>`}</span>}
-            <HListbox
+            <HListBox
                 disabled={readonly}
                 as="div"
                 className={classNames(cls.ListBox, {}, [className])}
                 value={value}
                 onChange={onChange}
             >
-
-                <HListbox.Button
-                    disabled={readonly}
-                    className={cls.trigger}
-                >
+                <HListBox.Button disabled={readonly} className={cls.trigger}>
                     <Button disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
-                </HListbox.Button>
-                <HListbox.Options className={classNames(cls.options, {}, optionsClasses)}>
+                </HListBox.Button>
+                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
                     {items?.map((item) => (
-                        <HListbox.Option
+                        <HListBox.Option
                             key={item.value}
                             value={item.value}
                             disabled={item.disabled}
                             as={Fragment}
                         >
                             {({ active, selected }) => (
-                                <li className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled })}>
+                                <li
+                                    className={classNames(
+                                        cls.item,
+                                        {
+                                            [cls.active]: active,
+                                            [cls.disabled]: item.disabled,
+                                        },
+                                    )}
+                                >
                                     {selected && '!!!'}
                                     {item.content}
                                 </li>
                             )}
-
-                        </HListbox.Option>
+                        </HListBox.Option>
                     ))}
-                </HListbox.Options>
-            </HListbox>
+                </HListBox.Options>
+            </HListBox>
         </HStack>
     );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ListBox } from './ListBox';
 
 export default {
@@ -15,22 +16,22 @@ export default {
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
 
-export const topLeft = Template.bind({});
-topLeft.args = {
-    direction: 'top left',
+export const Normal = Template.bind({});
+Normal.args = {
+    value: '123',
     items: [
-        { content: 'фыввфывфывф123', value: '123' },
-        { content: 'фыввфывфывфasdasd123', value: '1qwe23' },
-        { content: 'фыввфывzxccvzxфывф123', value: '12123' },
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
     ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const topLeft = Template.bind({});
+topLeft.args = {
+    direction: 'top left',
+    value: '123',
     items: [
-        { content: 'фыввфывфывф123', value: '123' },
-        { content: 'фыввфывфывфasdasd123', value: '1qwe23' },
-        { content: 'фыввфывzxccvzxфывф123', value: '12123' },
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
     ],
 };
 
@@ -39,9 +40,8 @@ topRight.args = {
     direction: 'top right',
     value: '123',
     items: [
-        { content: 'фыввфывфывф123', value: '123' },
-        { content: 'фыввфывфывфasdasd123', value: '1qwe23' },
-        { content: 'фыввфывzxccvzxфывф123', value: '12123' },
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
     ],
 };
 
@@ -50,9 +50,8 @@ bottomLeft.args = {
     direction: 'bottom left',
     value: '123',
     items: [
-        { content: 'фыввфывфывф123', value: '123' },
-        { content: 'фыввфывфывфasdasd123', value: '1qwe23' },
-        { content: 'фыввфывzxccvzxфывф123', value: '12123' },
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
     ],
 };
 
@@ -61,8 +60,7 @@ bottomRight.args = {
     direction: 'bottom right',
     value: '123',
     items: [
-        { content: 'фыввфывфывф123', value: '123' },
-        { content: 'фыввфывфывфasdasd123', value: '1qwe23' },
-        { content: 'фыввфывzxccvzxфывф123', value: '12123' },
+        { content: '1asfasfasf23', value: '123' },
+        { content: '1asfasfasf21233', value: '1232' },
     ],
 };

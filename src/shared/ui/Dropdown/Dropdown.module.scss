@@ -17,8 +17,8 @@
     z-index: 10000;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
-    display: flex;
     flex-direction: column;
+    display: flex;
 }
 
 .item {
@@ -45,12 +45,12 @@
     left: 0;
 }
 
-.optionsTopLeft {
+.optionsTopRight {
     bottom: 100%;
     left: 0;
 }
 
-.optionsTopRight {
-    bottom: 100%;
+.optionsTopLeft {
     right: 0;
+    bottom: 100%;
 }

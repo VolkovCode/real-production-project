@@ -4,5 +4,4 @@ import { ArticleDetailsRecommendationsSchema } from './ArticleDetailsRecommendat
 export interface ArticleDetailsPageSchema {
     comments: ArticleDetailsCommentsSchema;
     recommendations: ArticleDetailsRecommendationsSchema;
-
 }
