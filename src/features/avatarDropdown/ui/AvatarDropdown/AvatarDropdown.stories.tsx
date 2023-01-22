@@ -8,7 +8,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof AvatarDropdown>;
 
 const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
 
