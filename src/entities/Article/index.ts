@@ -10,6 +10,7 @@ export {
     ArticleView,
     ArticleSortField,
     ArticleType,
+    ArticleBlockType,
 } from './model/types/article';
 
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
