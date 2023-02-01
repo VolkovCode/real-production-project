@@ -7399,10 +7399,10 @@
   dependencies:
     "eslint-rule-composer" "^0.3.0"
 
-"eslint-plugin-volkovcode-plugin@^0.0.4":
-  "integrity" "sha512-Zrnip0oL2fRhI3l/GQ2uYKj1EZNd3wGEKoOjVi0NiB96QWJ8B15tVx8K4/gwg9gV6HxQAZYkJ+eYXXsz2LcG5Q=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-volkovcode-plugin/-/eslint-plugin-volkovcode-plugin-0.0.4.tgz"
-  "version" "0.0.4"
+"eslint-plugin-volkovcode-plugin@^0.0.5":
+  "integrity" "sha512-MUgVIejDAapF1ldMaeYyqlkFGqm/EoUA9z8Kli6oVXjSg+2XGULR0BVt0UVdqLmGYjXlWZHBXaBa+zBAArcQHw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-volkovcode-plugin/-/eslint-plugin-volkovcode-plugin-0.0.5.tgz"
+  "version" "0.0.5"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
