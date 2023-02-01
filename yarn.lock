@@ -7392,10 +7392,10 @@
     "semver" "^6.3.0"
     "string.prototype.matchall" "^4.0.6"
 
-"eslint-plugin-volkovcode-plugin@^0.0.3":
-  "integrity" "sha512-kayh3znjnJ0X0rkYykmvAdX/k6vLb/0HnwR81nsT9nzaB5dYrygjqHEoeJFdmucaY2eD2yE1rBNCCNPsQNO1YA=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-volkovcode-plugin/-/eslint-plugin-volkovcode-plugin-0.0.3.tgz"
-  "version" "0.0.3"
+"eslint-plugin-volkovcode-plugin@^0.0.4":
+  "integrity" "sha512-Zrnip0oL2fRhI3l/GQ2uYKj1EZNd3wGEKoOjVi0NiB96QWJ8B15tVx8K4/gwg9gV6HxQAZYkJ+eYXXsz2LcG5Q=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-volkovcode-plugin/-/eslint-plugin-volkovcode-plugin-0.0.4.tgz"
+  "version" "0.0.4"
   dependencies:
     "micromatch" "^4.0.5"
     "requireindex" "^1.2.0"
