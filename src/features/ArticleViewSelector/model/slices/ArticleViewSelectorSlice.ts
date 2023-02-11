@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ArticleViewSelectorSchema } from '../types/ArticleViewSelectorSchema';
 
 const initialState: ArticleViewSelectorSchema = {
-    
+
 };
 
 export const ArticleViewSelectorSlice = createSlice({
@@ -10,7 +10,7 @@ export const ArticleViewSelectorSlice = createSlice({
     initialState,
     reducers: {
         template: (state, action: PayloadAction<string>) => {
-           
+
         },
     },
     // extraReducers: (builder) => {
