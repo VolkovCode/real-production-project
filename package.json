@@ -28,7 +28,7 @@
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
-    "*": "your-cmd"
+    "**/*,{ts,tsx}": "eslint"
   },
   "keywords": [],
   "author": "",
