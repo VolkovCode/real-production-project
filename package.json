@@ -139,7 +139,7 @@
         "height": 768
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "firefox.docker",
         "preset": "iPhone 7"
       }
     }
