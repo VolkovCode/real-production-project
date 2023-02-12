@@ -79,6 +79,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.6.10",
     "eslint-plugin-unused-imports": "^2.0.0",
     "eslint-plugin-volkovcode-plugin": "^0.0.5",
     "file-loader": "^6.2.0",
@@ -116,7 +117,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@react-spring/web": "^9.5.2",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.9.2",
     "@use-gesture/react": "^10.2.19",
     "axios": "^0.26.1",
     "concurrently": "^7.0.0",
@@ -127,9 +128,8 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.3",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.2.1",
-    "react-virtualized": "^9.22.3"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.2.1"
   },
   "loki": {
     "configurations": {
