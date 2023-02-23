@@ -41,6 +41,7 @@ export const AppImage = memo((props: AppImageProps) => {
     }
 
     return (
-        <img className={className} src={src} {...otherProps} alt={alt} />
+        <img className={className} src={src} {...otherProps}
+alt={alt} />
     );
 });
