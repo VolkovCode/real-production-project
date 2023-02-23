@@ -6,12 +6,10 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
-import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -38,15 +36,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     title={t('VolkovCode App')}
                     theme={TextTheme.INVERTED}
                 />
-                <AppLink
-                    to={getRouteArticleCreate()}
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.createBtn}
-                >
-                    {t('Создать статью')}
-                </AppLink>
+                {/* <AppLink */}
+                {/*    to={getRouteArticleCreate()} */}
+                {/*    theme={AppLinkTheme.SECONDARY} */}
+                {/*    className={cls.createBtn} */}
+                {/* > */}
+                {/*    {t('Создать статью')} */}
+                {/* </AppLink> */}
                 <HStack gap="16" className={cls.actions}>
-
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
@@ -64,10 +61,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

@@ -925,6 +925,12 @@
       "userId": "1",
       "text": "12",
       "id": "r6b1z-N"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "vcbcvb",
+      "id": "Ur6BFJU"
     }
   ],
   "users": [
@@ -1042,6 +1048,12 @@
       "rate": 3,
       "feedback": "",
       "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 3,
+      "id": "nPCWshF"
     }
   ],
   "profile-ratings": [
