@@ -1,5 +1,9 @@
-# real-production-project
-Проект с курса Улби
+# blog-project
+Блог - позволяющий: читать, комментировать, оценивать статьи.
+
+Данные для входа: username - admin, password - 123
+
+Проект представляет собой React Single Page Application, использующий архитектуру [Feature-Sliced Design](https://feature-sliced.design/ru/). 
 
 
 ```

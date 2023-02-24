@@ -13,6 +13,8 @@ const MainPage = () => {
     return (
         <Page data-testid="MainPage">
             {t('Главная страница')}
+            <br />
+            {t('Данные для входа: username - admin, password - 123')}
         </Page>
     );
 };
