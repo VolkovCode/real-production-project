@@ -5,5 +5,4 @@ export const SuspenseDecorator = (StoryComponent: Story) => (
     <Suspense>
         <StoryComponent />
     </Suspense>
-
 );

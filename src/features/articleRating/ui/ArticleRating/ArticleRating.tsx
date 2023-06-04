@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RatingCard } from '@/entities/Rating';
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
+import {
+    useGetArticleRating,
+    useRateArticle,
+} from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
@@ -12,10 +15,7 @@ export interface ArticleRatingProps {
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
-    const {
-        className,
-        articleId,
-    } = props;
+    const { className, articleId } = props;
     const { t } = useTranslation();
     const userData = useSelector(getUserAuthData);
     const { data, isLoading } = useGetArticleRating({
@@ -25,24 +25,33 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
     const [rateArticleMutation] = useRateArticle();
 
-    const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
-        try {
-            rateArticleMutation({
-                userId: userData?.id ?? '',
-                articleId,
-                rate: starsCount,
-            });
-        } catch (e) {
-            console.log(e);
-        }
-    }, [articleId, rateArticleMutation, userData]);
+    const handleRateArticle = useCallback(
+        (starsCount: number, feedback?: string) => {
+            try {
+                rateArticleMutation({
+                    userId: userData?.id ?? '',
+                    articleId,
+                    rate: starsCount,
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        },
+        [articleId, rateArticleMutation, userData],
+    );
 
-    const onAccept = useCallback((starsCount: number, feedback?: string) => {
-        handleRateArticle(starsCount, feedback);
-    }, [handleRateArticle]);
-    const onCancel = useCallback((starsCount: number) => {
-        handleRateArticle(starsCount);
-    }, [handleRateArticle]);
+    const onAccept = useCallback(
+        (starsCount: number, feedback?: string) => {
+            handleRateArticle(starsCount, feedback);
+        },
+        [handleRateArticle],
+    );
+    const onCancel = useCallback(
+        (starsCount: number) => {
+            handleRateArticle(starsCount);
+        },
+        [handleRateArticle],
+    );
 
     const rating = data?.[0];
 
@@ -57,10 +66,11 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
             rate={rating?.rate}
             className={className}
             title={t('Оцените статью')}
-            feedbackTitle={t('Оставьте отзыв о статье, это поможет улучшить качество')}
+            feedbackTitle={t(
+                'Оставьте отзыв о статье, это поможет улучшить качество',
+            )}
             hasFeedback
         />
-
     );
 });
 

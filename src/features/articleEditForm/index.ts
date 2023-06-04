@@ -1,2 +1,2 @@
 // Форма создания статьи
-export type { };
+export type {};
